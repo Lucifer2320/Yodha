@@ -44,6 +44,11 @@ nav ul li a:hover {
     color: red;
 }
 
+/* Sections with Proper Gaps */
+section {
+    padding: 120px 20px;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -84,17 +89,18 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Programs Section */
+/* Programs Section with Uniform Red Boxes */
 .programs {
-    padding: 100px 20px;
+    text-align: center;
 }
 
 .program-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    justify-items: center;
-    padding-top: 20px;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
 }
 
 .program-box {
@@ -102,37 +108,49 @@ nav ul li a:hover {
     color: white;
     padding: 20px;
     font-size: 1.2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
-    text-transform: uppercase;
     transition: transform 0.3s;
 }
 
 .program-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Social Icons */
-.social-icons {
-    margin-top: 20px;
+/* Grid for Benefits */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.social-icon {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 24px;
-    padding: 10px;
-    border-radius: 50%;
-    background: white;
-    color: black;
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
     transition: transform 0.3s;
 }
 
-.social-icon.whatsapp { background: red; color: white; }
-.social-icon.instagram { background: red; color: white; }
+.card:hover {
+    transform: scale(1.1);
+}
 
-.social-icon:hover {
-    transform: scale(1.2);
+/* Contact and Start Your Journey Merged */
+.contact-merged {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #222;
+    padding: 60px;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 800px;
+}
+
+.contact-merged a {
+    margin-top: 10px;
 }
 
 /* Animations */
@@ -146,9 +164,19 @@ nav ul li a:hover {
     to { transform: translateX(0); }
 }
 
+/* Apply animation */
+.fade-in {
+    opacity: 0;
+    animation: fade-in 1.5s ease-in-out forwards;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h2 { font-size: 2rem; }
-    .hero p { font-size: 1rem; }
-    .program-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    .program-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid {
+        flex-direction: column;
+    }
 }
