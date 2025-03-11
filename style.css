@@ -136,6 +136,37 @@ section {
     transform: scale(1.1);
 }
 
+/* Why Choose Us Section */
+.why-us {
+    text-align: center;
+    padding: 50px 20px;
+    background: #111;
+    color: white;
+}
+
+.why-us h2 {
+    margin-bottom: 20px;
+}
+
+.why-list {
+    list-style: none;
+    padding: 0;
+}
+
+.why-list li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-list li i {
+    color: red;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
 /* Contact Section */
 .contact {
     text-align: center;
