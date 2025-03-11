@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for navigation links with offset
     document.querySelectorAll("nav ul li a").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
-            document.getElementById(targetId).scrollIntoView({
+            const targetElement = document.getElementById(targetId);
+            const offset = 80; // Adjusted offset to prevent content overlap
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - offset;
+            window.scrollTo({
+                top: offsetPosition,
                 behavior: "smooth"
             });
         });
