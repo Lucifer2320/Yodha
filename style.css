@@ -1,0 +1,154 @@
+/* Reset */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+body {
+    background: black;
+    text-align: center;
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('mma-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    animation: slide-in 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fade-in 2s ease-in-out forwards;
+}
+
+/* CTA Button */
+.cta-button {
+    background: red;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 40px;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+}
+
+/* Programs Section */
+.programs {
+    padding: 100px 20px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-top: 20px;
+}
+
+.program-box {
+    background: red;
+    color: white;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+}
+
+.program-box:hover {
+    transform: scale(1.1);
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    transition: transform 0.3s;
+}
+
+.social-icon.whatsapp { background: red; color: white; }
+.social-icon.instagram { background: red; color: white; }
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .program-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+}
